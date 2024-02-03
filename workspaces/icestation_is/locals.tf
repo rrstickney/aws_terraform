@@ -33,5 +33,10 @@ locals {
       value = "v=spf1 include:_spf.google.com ~all"
       ttl   = 3600
     }
+    "blog" = {
+      name  = "blog"
+      type  = "CNAME"
+      value = "hashnode.network."
+    }
   }
 }
