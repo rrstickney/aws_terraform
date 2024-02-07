@@ -9,4 +9,6 @@ module "vpc" {
   public_subnets  = var.vpc_public_subnets
 
   enable_nat_gateway = var.vpc_enable_nat_gateway
+
+  tags = var.tags
 }
