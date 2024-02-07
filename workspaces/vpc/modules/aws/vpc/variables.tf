@@ -30,3 +30,10 @@ variable "vpc_enable_nat_gateway" {
   default     = true
 }
 
+variable "tags" {
+  description = "tags"
+  type        = map(any)
+
+
+}
+

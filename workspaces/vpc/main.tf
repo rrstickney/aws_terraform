@@ -8,4 +8,6 @@ module "vpc" {
   vpc_private_subnets    = each.value.private_subnets
   vpc_public_subnets     = each.value.public_subnets
   vpc_enable_nat_gateway = each.value.enable_nat_gateway
+
+  tags = merge(local.tags, { "Name" = "{vpc_name}" })
 }
