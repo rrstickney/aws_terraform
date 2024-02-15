@@ -1,7 +1,6 @@
 locals {
   vpc = {
     "main_vpc" = {
-      name               = "main_vpc"
       cidr               = "10.141.0.0/16"
       azs                = ["us-west-2a", "us-west-2b", "us-west-2c"]
       private_subnets    = ["10.141.1.0/24", "10.141.2.0/24", "10.141.3.0/24"]

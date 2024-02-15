@@ -78,4 +78,34 @@ locals {
       ]
     }
   }
+  ec2_instance = {
+    "swarm-queen" = {
+      instance_type = "a1.xlarge"
+      root_block_device = [
+        {
+          volume_size           = "20"
+          volume_type           = "gp2"
+          encrypted             = true
+          delete_on_termination = true
+        }
+      ]
+      #GlusterFS drive
+      ebs_block_device = [
+        {
+          device_name           = "/dev/xvda"
+          volume_size           = "50"
+          volume_type           = "gp2"
+          encrypted             = true
+          delete_on_termination = true
+        }
+      ]
+      key_name   = module.ec2_keys["dev_pi_cluster"].key_pair_output
+      monitoring = false
+      vpc_security_group_ids = [
+        module.ec2_security_group["dev_pi_cluster_internal"].security_group_output.id
+      ]
+      # need to fix vpc tagging and outputs so I can get the subnet value from the state
+      subnet_id = ""
+    }
+  }
 }
