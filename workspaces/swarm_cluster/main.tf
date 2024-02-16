@@ -21,7 +21,7 @@ module "ec2_security_group" {
   tags        = merge(local.common_tags, { "Name" = each.key })
 }
 
-#create the instances
+#create the manager instances
 module "ec2_instance" {
   source   = "./modules/aws/ec2_instance"
   for_each = local.ec2_instance
@@ -36,7 +36,7 @@ module "ec2_instance" {
   subnet_id              = each.value.subnet_id
   vpc_security_group_ids = each.value.vpc_security_group_ids
 
-  tags        = merge(local.common_tags, { "Name" = each.key })
+  tags        = merge(local.common_tags, { "Name" = each.key }, { "role" = each.value.role })
   volume_tags = merge(local.common_tags, { "host" = each.key })
 }
 

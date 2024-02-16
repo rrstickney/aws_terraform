@@ -1,3 +1,3 @@
-output "vpc" {
-  value = module.vpc.vpc_id
+output "vpc_output" {
+  value = module.vpc
 }
