@@ -27,6 +27,12 @@ variable "subnet_id" {
   description = "subnet ID"
 }
 
+variable "associate_public_ip_address" {
+  type        = bool
+  description = "assign public ip address"
+  default     = false
+}
+
 variable "tags" {
   type        = map(string)
   description = "tags"

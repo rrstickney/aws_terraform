@@ -1,11 +1,12 @@
 resource "aws_instance" "this" {
   #name                   = var.name
-  instance_type          = var.instance_type
-  ami                    = var.ami
-  key_name               = var.key_name
-  monitoring             = var.monitoring
-  vpc_security_group_ids = var.vpc_security_group_ids
-  subnet_id              = var.subnet_id
+  instance_type               = var.instance_type
+  ami                         = var.ami
+  key_name                    = var.key_name
+  monitoring                  = var.monitoring
+  vpc_security_group_ids      = var.vpc_security_group_ids
+  subnet_id                   = var.subnet_id
+  associate_public_ip_address = var.associate_public_ip_address
   dynamic "root_block_device" {
     for_each = var.root_block_device
     content {
