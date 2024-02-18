@@ -24,7 +24,6 @@ variable "vpc_private_subnet_tags" {
   type        = map(string)
 }
 
-
 variable "vpc_public_subnets" {
   description = "Public subnets for VPC"
   type        = list(string)
@@ -34,7 +33,6 @@ variable "vpc_public_subnet_tags" {
   description = "tags for public subnets"
   type        = map(string)
 }
-
 
 variable "vpc_enable_nat_gateway" {
   description = "Enable NAT gateway for VPC"
@@ -51,7 +49,5 @@ variable "vpc_single_nat_gateway" {
 variable "tags" {
   description = "tags"
   type        = map(any)
-
-
 }
 
