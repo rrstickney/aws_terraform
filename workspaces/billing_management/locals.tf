@@ -12,14 +12,14 @@ locals {
           comparison_operator        = "GREATER_THAN"
           threshold                  = 75
           threshold_type             = "PERCENTAGE"
-          notification_type          = "FORECASTED"
+          notification_type          = "ACTUAL"
           subscriber_email_addresses = ["budget_warnings@icestation.is"]
         },
         {
           comparison_operator        = "GREATER_THAN"
           threshold                  = 90
           threshold_type             = "PERCENTAGE"
-          notification_type          = "FORECASTED"
+          notification_type          = "ACTUAL"
           subscriber_email_addresses = ["budget_critical@icestation.is"]
         }
       ]
