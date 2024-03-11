@@ -3,6 +3,6 @@ module "iam_role" {
   for_each = local.roles
 
   role_name           = each.value.name
-  assume_role_policy  = file("${path.module}/files/assume_role.json")
+  assume_role_policy  = each.value.assume_role_policy
   managed_policy_arns = each.value.managed_policy_arns
 }
