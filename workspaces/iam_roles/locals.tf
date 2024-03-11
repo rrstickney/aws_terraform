@@ -6,6 +6,7 @@ locals {
       managed_policy_arns = [
         "arn:aws:iam::aws:policy/AdministratorAccess"
       ]
+      max_session_duration = "28800"
     }
     "terraform_cloud_admin" = {
       name               = "terraform_cloud_admin"
@@ -13,6 +14,7 @@ locals {
       managed_policy_arns = [
         "arn:aws:iam::aws:policy/AdministratorAccess"
       ]
+      max_session_duration = "3600"
     }
   }
 }
