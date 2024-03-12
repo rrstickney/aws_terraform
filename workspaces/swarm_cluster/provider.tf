@@ -1,6 +1,5 @@
 provider "aws" {
-  profile = "icestation"
-  region  = "us-west-2"
+  region = "us-west-2"
 }
 terraform {
   required_providers {
