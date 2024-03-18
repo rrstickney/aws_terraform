@@ -31,7 +31,7 @@ data "aws_subnet" "public_subnet_2a" {
 }
 
 data "aws_subnet" "public_subnet_2b" {
-  vpc_id = data.tfe_outputs.vpc..vpc_output.main_vpc.vpc_output.vpc_id
+  vpc_id = data.tfe_outputs.vpc.vpc_output.main_vpc.vpc_output.vpc_id
 
   filter {
     name   = "tag:Name"
