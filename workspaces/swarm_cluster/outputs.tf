@@ -5,5 +5,6 @@ output "key_pair_output" {
 }
 
 output "security_group_output" {
-  value = module.ec2_security_group
+  value     = module.ec2_security_group
+  sensitive = true
 }
