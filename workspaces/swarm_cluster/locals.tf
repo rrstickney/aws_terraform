@@ -12,7 +12,7 @@ locals {
   ec2_security_groups = {
     "dev_pi_cluster_internal" = {
       description = "SG for internal network traffic between cluster members"
-      vpc_id      = data.terraform_remote_state.vpc.outputs.vpc_output.main_vpc.vpc_output.vpc_id
+      vpc_id      = data.tfe_outputs.vpc_output.main_vpc.vpc_output.vpc_id
       ingress = [
         {
           description = "secure docker client comms"
@@ -56,7 +56,7 @@ locals {
     "dev_pi_cluster_admin_access_external" = {
       description = "SG for external access to manage the pis"
       # this SG should be replaced with something that uses teleport
-      vpc_id = data.terraform_remote_state.vpc.outputs.vpc_output.main_vpc.vpc_output.vpc_id
+      vpc_id = data.tfe_outputs.vpc.outputs.vpc_output.main_vpc.vpc_output.vpc_id
       ingress = [
         {
           description = "ssh to the hosts"
