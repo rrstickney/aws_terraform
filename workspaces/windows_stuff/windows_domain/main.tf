@@ -32,7 +32,7 @@ module "domain_controllers" {
   monitoring                  = false
   root_block_device           = local.root_block_device
   ebs_block_device            = local.ebs_block_device
-  key_name                    = module.ec2_keys["windows_domain"].key_pair_output
+  key_name                    = module.ec2_keys["windows_keypair"].key_pair_output
   subnet_id                   = local.a1_xlarge_subnet_ids[count.index % length(local.a1_xlarge_subnet_ids)]
   vpc_security_group_ids      = [module.ec2_security_group["windows_domain_controllers"].security_group_output.id]
   associate_public_ip_address = false

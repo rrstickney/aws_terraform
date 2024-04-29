@@ -14,12 +14,12 @@ data "terraform_remote_state" "vpc" {
   }
 }
 
-data "aws_subnet" "public_subnet_2a" {
+data "aws_subnet" "private_subnet_2a" {
   vpc_id = data.terraform_remote_state.vpc.outputs.vpc_output.main_vpc.vpc_output.vpc_id
 
   filter {
     name   = "tag:Name"
-    values = ["public_subnet"]
+    values = ["private_subnet"]
   }
   filter {
     name   = "availability-zone"
@@ -27,12 +27,12 @@ data "aws_subnet" "public_subnet_2a" {
   }
 }
 
-data "aws_subnet" "public_subnet_2b" {
+data "aws_subnet" "private_subnet_2b" {
   vpc_id = data.terraform_remote_state.vpc.outputs.vpc_output.main_vpc.vpc_output.vpc_id
 
   filter {
     name   = "tag:Name"
-    values = ["public_subnet"]
+    values = ["private_subnet"]
   }
   filter {
     name   = "availability-zone"
@@ -40,12 +40,12 @@ data "aws_subnet" "public_subnet_2b" {
   }
 }
 
-data "aws_subnet" "public_subnet_2c" {
+data "aws_subnet" "private_subnet_2c" {
   vpc_id = data.terraform_remote_state.vpc.outputs.vpc_output.main_vpc.vpc_output.vpc_id
 
   filter {
     name   = "tag:Name"
-    values = ["public_subnet"]
+    values = ["private_subnet"]
   }
   filter {
     name   = "availability-zone"
