@@ -49,7 +49,5 @@ variable "vpc_single_nat_gateway" {
 variable "tags" {
   description = "tags"
   type        = map(any)
-
-
 }
 

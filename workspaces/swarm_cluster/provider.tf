@@ -9,7 +9,7 @@ terraform {
   }
   backend "s3" {
     bucket         = "tfstate-icestation"
-    key            = "vpc/terraform.state"
+    key            = "swarm_cluster/terraform.state"
     region         = "us-west-2"
     dynamodb_table = "tfstate-icestation-dynamo"
   }
